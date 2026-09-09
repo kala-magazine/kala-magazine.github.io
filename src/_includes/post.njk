@@ -1,0 +1,45 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <header class="post-head">
+    <p class="eyebrow">{{ category or "מדריך" }}</p>
+    <h1>{{ title }}</h1>
+    <p class="lede">{{ description }}</p>
+    <p class="meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time>
+      · כ־{{ content | readTime }} דקות קריאה
+    </p>
+  </header>
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+  {%- if faq %}
+  <section class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">שאלות שחוזרות</h2>
+    {%- for item in faq %}
+    <details>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+  <footer class="post-foot">
+    <p class="muted">רוצה לקרוא עוד? כל המדריכים נמצאים <a href="/">בדף הבית</a>.</p>
+  </footer>
+</article>
+{%- set others = collections.posts | related(page, 3) %}
+{%- if others.length %}
+<aside class="related" aria-labelledby="related-title">
+  <h2 id="related-title">עוד מדריכים</h2>
+  <ul class="post-list compact">
+    {%- for p in others %}
+    <li>
+      <a href="{{ p.url }}"><strong>{{ p.data.title }}</strong></a>
+      <span>{{ p.data.description }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+</aside>
+{%- endif %}

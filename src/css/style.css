@@ -1,0 +1,160 @@
+:root {
+  --bg: #faf7f2;
+  --bg-card: #ffffff;
+  --ink: #2b2622;
+  --ink-soft: #6b625b;
+  --accent: #a5674f;
+  --accent-soft: #f3ebe3;
+  --line: #e8e0d6;
+  --serif: "Frank Ruhl Libre", "Times New Roman", serif;
+  --sans: "Heebo", "Segoe UI", Arial, sans-serif;
+  --max: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; text-underline-offset: 0.2em; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+.skip {
+  position: absolute; inset-inline-start: -999px; top: 0;
+  background: var(--accent); color: #fff; padding: 0.5rem 1rem; z-index: 10;
+}
+.skip:focus { inset-inline-start: 0.5rem; top: 0.5rem; }
+
+/* header */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(6px);
+  position: sticky; top: 0; z-index: 5;
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-block: 0.9rem; gap: 1rem; flex-wrap: wrap;
+}
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); }
+.brand:hover { text-decoration: none; }
+.brand-mark {
+  width: 14px; height: 22px; border-radius: 50% 50% 45% 45%;
+  background: var(--accent);
+  transform: rotate(-12deg);
+}
+.brand-name { font-family: var(--serif); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.01em; }
+.nav { display: flex; gap: 1.25rem; font-size: 0.95rem; }
+.nav a { color: var(--ink-soft); }
+.nav a:hover { color: var(--accent); }
+
+/* hero */
+.hero { padding: 3.5rem 0 2rem; }
+.hero h1 {
+  font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+  line-height: 1.2; margin: 0.3rem 0 1rem;
+}
+.eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 0.4rem; font-weight: 500;
+}
+.lede { font-size: 1.15rem; color: var(--ink-soft); margin: 0; max-width: 38rem; }
+
+.section-title {
+  font-family: var(--serif); font-weight: 500; font-size: 1.5rem;
+  margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--line);
+}
+
+/* post list */
+.post-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(43, 38, 34, 0.06); }
+.card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.4rem; margin: 0 0 0.4rem; line-height: 1.3; }
+.card h3 a { color: var(--ink); }
+.card p { margin: 0 0 0.5rem; }
+.meta { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
+.post-list.compact li { padding: 0.75rem 0; border-bottom: 1px solid var(--line); display: grid; gap: 0.2rem; }
+.post-list.compact span { color: var(--ink-soft); font-size: 0.95rem; }
+
+.about-strip {
+  margin: 3rem 0 1rem; padding: 1.6rem 1.75rem;
+  background: var(--accent-soft); border-radius: 14px;
+}
+.about-strip h2 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; font-size: 1.35rem; }
+.about-strip p { margin: 0; }
+
+/* article */
+.post { padding-top: 2.5rem; }
+.post-head h1 {
+  font-family: var(--serif); font-weight: 500; font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  line-height: 1.2; margin: 0.2rem 0 0.8rem;
+}
+.post-head .meta { margin-top: 0.8rem; }
+.post-body { margin-top: 2rem; }
+.post-body h2 {
+  font-family: var(--serif); font-weight: 500; font-size: 1.55rem;
+  margin: 2.2rem 0 0.6rem; line-height: 1.3;
+}
+.post-body h3 { font-size: 1.15rem; margin: 1.6rem 0 0.4rem; font-weight: 600; }
+.post-body p, .post-body li { max-width: 40rem; }
+.post-body ul, .post-body ol { padding-inline-start: 1.4rem; }
+.post-body li { margin-bottom: 0.35rem; }
+.post-body blockquote {
+  margin: 1.5rem 0; padding: 0.2rem 1.2rem;
+  border-inline-start: 3px solid var(--accent); color: var(--ink-soft);
+  font-family: var(--serif); font-size: 1.15rem;
+}
+.post-body table { border-collapse: collapse; width: 100%; margin: 1.2rem 0; font-size: 0.95rem; }
+.post-body th, .post-body td { text-align: start; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.post-body th { background: var(--accent-soft); font-weight: 600; }
+.post-body img { max-width: 100%; height: auto; border-radius: 10px; }
+.post-body .note {
+  background: var(--accent-soft); border-radius: 10px; padding: 1rem 1.2rem; margin: 1.5rem 0;
+}
+
+.faq { margin-top: 3rem; }
+.faq h2 { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; margin-bottom: 0.6rem; }
+.faq details { border-bottom: 1px solid var(--line); padding: 0.7rem 0; }
+.faq summary { cursor: pointer; font-weight: 600; list-style: none; position: relative; padding-inline-end: 1.5rem; }
+.faq summary::after { content: "+"; position: absolute; inset-inline-end: 0; color: var(--accent); }
+.faq details[open] summary::after { content: "−"; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq p { margin: 0.5rem 0 0; color: var(--ink-soft); }
+
+.post-foot { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.related { margin-top: 3rem; }
+.related h2 { font-family: var(--serif); font-weight: 500; font-size: 1.4rem; margin-bottom: 0.4rem; }
+
+.muted { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* generic page (about, 404) */
+main > h1 { font-family: var(--serif); font-weight: 500; font-size: 2.2rem; margin: 2.5rem 0 1rem; }
+main > h2 { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; margin: 2rem 0 0.5rem; }
+main > p { max-width: 40rem; }
+
+.site-footer {
+  margin-top: 4rem; padding: 2rem 0 2.5rem; border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.site-footer p { margin: 0.2rem 0; }
+
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  .hero { padding-top: 2.2rem; }
+  .card { padding: 1.1rem 1.2rem; }
+}

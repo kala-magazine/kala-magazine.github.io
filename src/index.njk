@@ -1,0 +1,28 @@
+---
+layout: base.njk
+description: "מדריכים ברורים על שמלות כלה: גזרות, בדים, בוהו, לוח זמנים, מדידות ושאלות לפני רכישה. בלוג עברי בגובה העיניים."
+---
+<section class="hero">
+  <p class="eyebrow">בלוג עברי על שמלות כלה</p>
+  <h1>{{ site.tagline }}</h1>
+  <p class="lede">כאן מסבירים מה ההבדל בין גזרת A לנסיכה, מה זה בעצם בוהו, מתי להתחיל לחפש, ומה לשאול לפני שחותמים. בלי מונחים שצריך לגגל ובלי דחיפה לקנות.</p>
+</section>
+
+<section aria-labelledby="latest">
+  <h2 id="latest" class="section-title">המדריכים</h2>
+  <ul class="post-list">
+  {%- for p in collections.posts %}
+    <li class="card">
+      <p class="eyebrow">{{ p.data.category or "מדריך" }}</p>
+      <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+      <p>{{ p.data.description }}</p>
+      <p class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | heDate }}</time> · כ־{{ p.templateContent | readTime }} דקות</p>
+    </li>
+  {%- endfor %}
+  </ul>
+</section>
+
+<section class="about-strip">
+  <h2>למה עוד בלוג על שמלות כלה?</h2>
+  <p>רוב מה שיש ברשת בעברית הוא או קטלוג של סלון או כתבה ממומנת. כאן מנסים לכתוב את מה שהיינו רוצות לדעת לפני הפגישה הראשונה: מה השאלות הנכונות, מה מחמיא למי, ומה באמת משנה בבד ובגזרה. <a href="/about/">עוד על הבלוג</a>.</p>
+</section>

@@ -1,0 +1,15 @@
+{
+  "name": "kala-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "בלוג עברי על שמלות כלה, אתר סטטי",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

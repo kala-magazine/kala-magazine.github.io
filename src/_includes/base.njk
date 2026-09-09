@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- set pageTitle = (title ~ " | " ~ site.name) if title else (site.name ~ " | " ~ site.tagline) %}
+{%- set pageDesc = description or site.description %}
+{%- set pageUrl = page.url | absUrl(site.url) %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ pageUrl }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:type" content="{{ 'article' if type == 'article' else 'website' }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ pageUrl }}">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | absUrl(site.url) }}">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f3ebe3'/%3E%3Cpath d='M32 12c-4 8-12 14-12 28 0 8 6 12 12 12s12-4 12-12c0-14-8-20-12-28z' fill='%23a5674f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+{%- if type == 'article' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ pageDesc | dump | safe }},
+  "inLanguage": "he",
+  "datePublished": "{{ page.date | isoDate }}",
+  "dateModified": "{{ (updated or page.date) | isoDate }}",
+  "author": { "@type": "Organization", "name": "{{ site.author }}", "url": "{{ site.url }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}" },
+  "mainEntityOfPage": "{{ pageUrl }}"
+}
+</script>
+{%- if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {%- for item in faq %}
+    { "@type": "Question", "name": {{ item.q | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} } }{{ "," if not loop.last }}
+  {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
+{%- else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "{{ site.name }}",
+  "description": {{ site.description | dump | safe }},
+  "url": "{{ site.url }}",
+  "inLanguage": "he"
+}
+</script>
+{%- endif %}
+</head>
+<body>
+<a class="skip" href="#main">דלגי לתוכן</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="{{ site.name }}, דף הבית">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">{{ site.name }}</span>
+    </a>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <a href="/">מדריכים</a>
+      <a href="/about/">אודות</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{{ content | safe }}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>{{ site.name }}. מדריכים על שמלות כלה, נכתבים בעברית פשוטה.</p>
+    <p class="muted">© {{ site.year }} · <a href="/about/">אודות</a> · <a href="/sitemap.xml">מפת אתר</a></p>
+  </div>
+</footer>
+</body>
+</html>
