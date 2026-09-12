@@ -4,7 +4,7 @@
   "description": "בלוג עברי על שמלות כלה: גזרות, בדים, בוהו, מדידות, לוח זמנים ושאלות שכדאי לשאול לפני שסוגרים. כתוב בגובה העיניים לכלות שרוצות להבין לפני שהן בוחרות.",
   "url": "https://kala-magazine.github.io",
   "lang": "he",
-  "author": "מגזין הכלה",
+  "author": "שני ששון",
   "studioName": "שני ששון",
   "studioUrl": "https://www.shanysasson.com/",
   "sisterSite": {
@@ -13,5 +13,15 @@
   },
   "email": "",
   "year": 2026,
-  "gaId": ""
+  "gaId": "",
+  "authorTitle": "מעצבת שמלות כלה, מייסדת Lace & Love",
+  "authorUrl": "https://www.shanysasson.com/",
+  "authorSameAs": [
+    "https://www.shanysasson.com/",
+    "https://shany-sasson-wedding-dresses.com/pages/about",
+    "https://www.instagram.com/lace_and_love_brides/",
+    "https://www.facebook.com/shanysasson.bridal.fashion.home",
+    "https://www.pinterest.com/LaceandLoveBrides"
+  ],
+  "authorBio": "שני ששון היא מעצבת שמלות כלה, דור שלישי למקצוע, ומייסדת Lace & Love. הסטודיו שלה בהוד השרון תופר שמלות כלה בהתאמה אישית לכלות בארץ, ודרך הסטודיו המקוון גם בארצות הברית ובאירופה. היא בודקת כל מדריך מול מה שהיא רואה במדידות באותו שבוע, ועורכי המגזין אחראים לכתיבה."
 }

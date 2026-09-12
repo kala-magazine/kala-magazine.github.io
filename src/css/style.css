@@ -160,3 +160,11 @@ main > p { max-width: 40rem; }
 }
 
 .post-body img.narrow { max-width: 400px; display: block; }
+
+.author-box { margin-top: 2.5rem; padding: 1.2rem 1.4rem; background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; font-size: 0.95rem; }
+.author-name { margin: 0 0 0.2rem; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
+.author-title { margin: 0 0 0.4rem; font-size: 0.85rem; color: var(--accent); }
+.author-box p { margin: 0; color: var(--ink-soft); }
+.figure-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+.figure-pair img { width: 100%; height: auto; }
+@media (max-width: 520px) { .figure-pair { grid-template-columns: 1fr; } }

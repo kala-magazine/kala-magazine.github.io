@@ -7,7 +7,8 @@ layout: base.njk
     <h1>{{ title }}</h1>
     <p class="lede">{{ description }}</p>
     <p class="meta">
-      <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time>
+      מאת <a href="/about/#author" rel="author">{{ site.author }}</a>, {{ site.authorTitle }}
+      · <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time>
       · כ־{{ content | readTime }} דקות קריאה
     </p>
   </header>
@@ -25,6 +26,11 @@ layout: base.njk
     {%- endfor %}
   </section>
   {%- endif %}
+  <aside class="author-box">
+    <p class="author-name">{{ site.author }}</p>
+    <p class="author-title">{{ site.authorTitle }}</p>
+    <p>{{ site.authorBio }} <a href="/about/#author">עוד על הכותבת</a>.</p>
+  </aside>
   <footer class="post-foot">
     <p class="muted">רוצה לקרוא עוד? כל המדריכים נמצאים <a href="/">בדף הבית</a>.</p>
   </footer>
