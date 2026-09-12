@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 770" width="520" height="770" role="img" aria-labelledby="t">
+<title id="t">אורכי הינומה על דמות: בירדקייג', כתפיים, מרפק, קצות אצבעות, קפלה וקתדרלה.</title>
+<rect width="520" height="770" fill="#faf7f2"/>
+<style>text{font-family:Inter,Heebo,Arial,sans-serif;font-size:15px;fill:#2b2622}.s{font-size:12px;fill:#675e57}</style>
+<circle cx="370" cy="60" r="22" fill="#e6ddd2" stroke="#8d5a44" stroke-width="1.5"/>
+<path d="M318,110 C324,150 342,200 346,220 C330,330 300,520 294,690 L446,690 C440,520 410,330 394,220 C398,200 416,150 422,110 Z" fill="#efe6dc" stroke="#8d5a44" stroke-width="2"/>
+<path d="M344,70 L240,690 L500,690 L396,70 Z" fill="#8d5a44" opacity=".07"/>
+<line x1="240" y1="110" x2="500" y2="110" stroke="#8d5a44" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="220" y="106" text-anchor="end">בירדקייג'</text><text x="220" y="123" text-anchor="end" class="s">עד עצמות הלחיים</text>
+<line x1="240" y1="150" x2="500" y2="150" stroke="#8d5a44" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="220" y="146" text-anchor="end">כתפיים</text><text x="220" y="163" text-anchor="end" class="s">בערך 50 ס"מ</text>
+<line x1="240" y1="300" x2="500" y2="300" stroke="#8d5a44" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="220" y="296" text-anchor="end">מרפק</text><text x="220" y="313" text-anchor="end" class="s">בערך 80 ס"מ</text>
+<line x1="240" y1="420" x2="500" y2="420" stroke="#8d5a44" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="220" y="416" text-anchor="end">קצות אצבעות</text><text x="220" y="433" text-anchor="end" class="s">בערך 110 ס"מ</text>
+<line x1="240" y1="690" x2="500" y2="690" stroke="#8d5a44" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="220" y="668" text-anchor="end">קפלה</text><text x="220" y="685" text-anchor="end" class="s">עד קצה השובל</text>
+<line x1="240" y1="740" x2="500" y2="740" stroke="#8d5a44" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="220" y="736" text-anchor="end">קתדרלה</text><text x="220" y="753" text-anchor="end" class="s">מעבר לשובל</text>
+</svg>

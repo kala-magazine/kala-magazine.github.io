@@ -158,3 +158,5 @@ main > p { max-width: 40rem; }
   .hero { padding-top: 2.2rem; }
   .card { padding: 1.1rem 1.2rem; }
 }
+
+.post-body img.narrow { max-width: 400px; display: block; }

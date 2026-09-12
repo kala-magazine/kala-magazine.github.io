@@ -5,7 +5,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy("src/*.txt"); // indexnow key
   eleventyConfig.addPassthroughCopy({ "src/img": "img" });
-  eleventyConfig.addPassthroughCopy({ "src/llms.txt": "llms.txt" });
 
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date)
@@ -15,6 +14,7 @@ export default function (eleventyConfig) {
     new Date(d).toLocaleDateString("he-IL", { year: "numeric", month: "long", day: "numeric" })
   );
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString());
+  eleventyConfig.addFilter("wordCount", (c) => (c || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length);
   eleventyConfig.addFilter("rfcDate", (d) => new Date(d).toUTCString());
   eleventyConfig.addFilter("absUrl", (path, base) => base.replace(/\/$/, "") + path);
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
