@@ -3,6 +3,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy("src/*.txt"); // indexnow key
   eleventyConfig.addPassthroughCopy({ "src/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/llms.txt": "llms.txt" });
 

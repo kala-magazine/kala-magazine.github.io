@@ -7,7 +7,11 @@
   "author": "מגזין הכלה",
   "studioName": "שני ששון",
   "studioUrl": "https://www.shanysasson.com/",
-  "sisterSite": { "name": "The Gown Journal (English)", "url": "https://gownjournal.github.io/" },
+  "sisterSite": {
+    "name": "The Gown Journal (English)",
+    "url": "https://gownjournal.github.io/"
+  },
   "email": "",
-  "year": 2026
+  "year": 2026,
+  "gaId": ""
 }
